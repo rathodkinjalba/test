@@ -334,4 +334,3 @@ class LogoutAPI(APIView):
         except Exception as e:
             return Response({'status': 0,'message': 'Invalid token',"data": None}, status=200)
         
-        
