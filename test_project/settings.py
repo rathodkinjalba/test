@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-zpv8^^_3i0w-dp(u=i1kfr6fb&hgd=!k!odh9z8zq6g^c$t0dg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     "Admin",
+    'corsheaders',
 ]
-
+CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
 REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -52,6 +53,10 @@ REST_FRAMEWORK = {
 
 }
 MIDDLEWARE = [
+    # add CORS middleware 
+    'corsheaders.middleware.CorsMiddleware',
+
+    'test_project.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 AUTH_USER_MODEL = 'Admin.User_Master'
 
@@ -138,7 +144,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# CORS_ALLOWED_ORIGINS = [
 
+#     "http://localhost:3001",
+
+# ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
