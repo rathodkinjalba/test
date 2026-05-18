@@ -119,8 +119,9 @@ class OtpVerificationAPI(APIView):
             user = User_Master.objects.create(
                 username=temp_user.username,
                 email=temp_user.email,
+                photo=temp_user.photo,
                 password=temp_user.password,
-                phone_number=temp_user.phone,
+                phone=temp_user.phone,
                 user_type=user_type
             )
             refresh = RefreshToken.for_user(user)
@@ -135,7 +136,7 @@ class OtpVerificationAPI(APIView):
                 'message': 'Account verified successfully',
                 'access': access_token,
                 'refresh': refresh_token,
-                
+            
             }, status=200)
 
         except Exception as e:

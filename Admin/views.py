@@ -154,9 +154,10 @@ class OtpVerificationAPI(APIView):
             # Create main user
             user = User_Master.objects.create(
                 username=temp_user.username,
+                photo=temp_user.photo,
                 email=temp_user.email,
                 password=temp_user.password,
-                phone_number=temp_user.phone,
+                phone=temp_user.phone,
                 user_type=user_type
             )
             refresh = RefreshToken.for_user(user)

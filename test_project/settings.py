@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     "Admin",
+    "User",
     'corsheaders',
 ]
 CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
@@ -66,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
-AUTH_USER_MODEL = 'Admin.User_Master'
+AUTH_USER_MODEL = 'User.User_Master'
 
 SIMPLE_JWT = {
 
@@ -122,8 +123,8 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'jaiminpatelnexgits@gmail.com'
-EMAIL_HOST_PASSWORD = 'drahspeqiayvavzt'
+EMAIL_HOST_USER = 'rathodkinjalba4462@gmail.com'
+EMAIL_HOST_PASSWORD = 'evam fsle iumh ajt'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
