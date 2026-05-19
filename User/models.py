@@ -85,3 +85,4 @@ class User_OTP_Master(models.Model):
 
     class Meta:
         db_table = 'user_otp_master'
+        

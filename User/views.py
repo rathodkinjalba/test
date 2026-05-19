@@ -313,7 +313,6 @@ class UserUpdateProfileAPI(APIView):
                     'data': {
                         'id': str(user.id),
                         'username': user.username,
-                        'email': user.email,
                         'phone': user.phone,
                         'photo': request.build_absolute_uri(user.photo.url) if user.photo else None}}, status=200)
 
