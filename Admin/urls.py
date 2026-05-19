@@ -16,6 +16,5 @@ urlpatterns = [
     path('api/v1/auth/reset-password/', Resend_Forgot_Otp_API.as_view()),
     path('api/v1/auth/change-password/', Reset_Password_API.as_view()),
 
-
     path('logout/', LogoutAPI.as_view()),
 ]

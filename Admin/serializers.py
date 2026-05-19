@@ -1,7 +1,5 @@
-import re
 from rest_framework import serializers
 from User.models import AdminTempUser
-
 
 class AdminRegisterSerializer(serializers.ModelSerializer):
 
@@ -16,5 +14,3 @@ class AdminRegisterSerializer(serializers.ModelSerializer):
         if len(value) != 10:
             raise serializers.ValidationError("Phone number must be exactly 10 digits.")
         return value
-
-

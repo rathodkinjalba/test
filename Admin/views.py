@@ -90,7 +90,6 @@ class UserRegistrationAPI(APIView):
                         'phone': temp_user.phone,
                         'photo': request.build_absolute_uri(temp_user.photo.url) if temp_user.photo else None}},status=200)
           
-
         return Response({'status': 0,'message': 'Validation Error','errors': serializer.errors},status=200)
 
 # OTP verification for registration, including expiry check, duplicate user check, and JWT token generation upon successful verification.
