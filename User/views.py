@@ -51,7 +51,7 @@ def validate_password(value):
 class UserRegistrationAPI(APIView):
 
     def post(self, request):
-        serializer = AdminRegisterSerializer(data=request.data)
+        serializer = UserRegisterSerializer(data=request.data)
 
         if serializer.is_valid():
             password = serializer.validated_data.get('password')
@@ -291,7 +291,6 @@ class Reset_Password_API(APIView):
             refresh = RefreshToken.for_user(user)
             access_token = str(refresh.access_token)
             refresh_token = str(refresh)
-            
 
             return Response({'status': 1,'message': 'Password reset successfully.','data': {"access": access_token, "refresh": refresh_token}}, status=200)
         except Exception as e:

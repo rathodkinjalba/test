@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from User.models import *
 
-class AdminRegisterSerializer(serializers.ModelSerializer):
+class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AdminTempUser
